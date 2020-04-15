@@ -1,0 +1,45 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: spring-config
+  # 配置中心
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/huangjie1991/spring-config-repository.git
+          username: 737377844@qq.com
+          password: hj19911028
+  devtools: 
+    restart: 
+      exclude: config/*
+      enabled: true
+      trigger-file: '*'
+          
+#spring:
+#  application:
+#    name: spring-config
+#  profiles:
+#    active: native
+#  # 配置中心
+#  cloud:
+#    config:
+#      server:
+#        native:
+#          search-locations: classpath:/config/    
+      
+# 注册中心配置
+#eureka:
+#  instance:
+#    prefer-ip-address: true
+#  client:
+#    service-url:
+#      defaultZone: 
+
+# 暴露监控端点
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: '*'
